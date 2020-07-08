@@ -1,0 +1,97 @@
+// ul为卡片样式的列表
+.list-card{
+   .layout-center-margin();background-color: #fff;border-radius: 10px;overflow: hidden;.box-shadow();
+    >li{
+        >*{
+            .flex-h;padding:0 2%;margin-left: 2%;margin-right: 2%;justify-content:space-between;height: 100px;line-height: 100px;
+        }
+        &:active{
+            box-shadow: 0px 0px 2000px rgba(0,0,0,0.2) inset;
+        }
+        & + li{
+            >*{
+                border-top:1px solid @line-color;
+            }
+        }
+    }
+}
+// li为卡片样式的列表
+.ul-li-card,.list-li-card{
+    .layout-center-margin();
+    >li{
+        background-color:#fff;border-radius: 10px;.box-shadow();
+        & + li{
+            margin-top: 20px;
+        }
+    }
+}
+
+// 带有分隔线的列表
+.list-li-row-line{
+    background-color:#fff;
+    >li{
+        .layout-center-padding();
+        >*{
+            .layout-center-padding(2%);
+        }
+        // 第一行一般不需要分隔线，特殊情况下需要分隔线时，添加border类名
+        & + li, &.border{
+            >*{
+                border-top:1px solid @line-color;
+            }
+        }
+    }
+}
+
+// 键值对形式的列表
+.list-item{
+    .item{
+        .flex-h;line-height: 1.5;.padding-v(28px);
+        .label{
+            min-width: 5em;color:@font-ano-color;text-align: justify;padding-right: 10px;
+        }
+        .field{
+            .flex-110;word-break:break-all;
+        }
+    }
+    &.list-secondray{
+        .item{
+            font-size: @font-size-sm;
+            .padding-v(14px);
+        }
+    }
+}
+// 表单列表
+.list-form{
+    .list-li-row-line();.list-item();
+}
+li.link{
+    >*{
+        .flex-h;.padding-v(24px);.flex-vc;
+        justify-content: space-between;line-height: 1.5;
+        .left{
+            .flex-110;
+        }
+        .right{
+            color:@font-ano-color;
+        }
+        .icon-right{
+            justify-content: flex-end;color: @font-ano-color;
+        }
+    }
+    &:active{
+        .touch-default();
+    }
+}
+li.item{
+    >*{
+        .flex-h;.padding-v(24px);.flex-vc;
+        justify-content: space-between;line-height: 1.5;
+        .label{
+            min-width: 5em;color:@font-ano-color;
+        }
+        .field{
+            .flex-110;word-break:break-all;
+        }
+    }
+}

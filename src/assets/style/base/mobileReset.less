@@ -1,0 +1,61 @@
+// 适用于移动端
+// 类名中的单词用连字符连接，不用驼峰或下划线
+@charset "UTF-8";
+
+// 初始化
+a,div,footer,section,input,li,p,ul,dl,dd,dt,form,h1,h2,h3,h4,h5,span,form,textarea,button,select{
+	margin:0;
+	padding:0;
+	border:none;
+	background-color:transparent;
+	-webkit-tap-highlight-color:transparent;
+	//盒模型
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+html,body{
+	margin:0;
+	padding:0;
+	position: relative;
+}
+
+input,select,textarea{
+	outline:0;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	color:inherit;
+	font-size:inherit;
+	font-family:inherit;
+	line-height: inherit;
+}
+// 去除数字输入框右侧箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"]{-moz-appearance:textfield;}
+// 重置字体
+html,a,button,input{
+	font-family: "Microsoft Yahei","微软雅黑","Helvetica";
+}
+ul,ol,dl,li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	display: inline-block;
+/*	width: 100%;
+	height: 100%;*/
+	color:inherit;
+}
+button:focus{
+	outline:0;
+}
+img[src=""]{
+	opacity:0;
+}

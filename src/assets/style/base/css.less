@@ -1,0 +1,148 @@
+@import './variant.less';
+/*页面中存在的便捷的全局样式*/
+.nowrap{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+.select-none{moz-user-select: -moz-none;-moz-user-select: none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;}
+
+.no-beforeafter:before,.no-beforeafter:after{display: none!important;}
+.has-beforeafter:before,.has-beforeafter:after{display: block!important;}
+
+
+//清除浮动
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.clear:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.overflow-hidden{overflow: hidden!important;}
+
+.border-none{border: none!important;}
+
+.margin-top-20{margin-top: 20px;}
+.margin-top-10{margin-top: 10px;}
+.margin-top-0{margin-top: 0;}
+.margin-bottom-20{margin-bottom: 20px;}
+.margin-bottom-10{margin-bottom: 10px;}
+.margin-bottom-0{margin-bottom: 0;}
+.margin-right-20{margin-right: 20px;}
+.margin-right-10{margin-right: 10px;}
+.margin-right-0{margin-right: 0;}
+.margin-left-20{margin-left: 20px;}
+.margin-left-10{margin-left: 10px;}
+.margin-left-0{margin-left: 0;}
+
+.padding-top-20{padding-top: 20px;}
+.padding-top-10{padding-top: 10px;}
+.padding-top-0{padding-top: 0;}
+.padding-bottom-20{padding-bottom: 20px;}
+.padding-bottom-10{padding-bottom: 10px;}
+.padding-bottom-0{padding-bottom: 0;}
+.padding-right-20{padding-right: 20px;}
+.padding-right-10{padding-right: 10px;}
+.padding-right-0{padding-right: 0;}
+.padding-left-20{padding-left: 20px;}
+.padding-left-10{padding-left: 10px;}
+.padding-left-0{padding-left: 0;}
+
+
+.text-xl{
+    font-size:@font-size-xl;
+}
+.text-lg{
+    font-size:@font-size-lg;
+}
+.text-size-sd{
+    font-size:@font-size;
+}
+.text-sm{
+    font-size:@font-size-sm;
+}
+.text-xs{
+    font-size:@font-size-xs;
+}
+.text-center{
+	text-align: center;
+}
+.text-bold{
+	font-weight:bold;
+}
+.text-ano{
+	color:@font-ano-color;
+}
+.text-color-sd{
+    color: @color-font;
+}
+.text-sd{
+    font-size:@font-size;
+    color: @color-font;
+}
+.text-row{
+    padding-top: 12px;padding-bottom: 12px;
+}
+.layout-center-margin{
+    margin-left: 3%;margin-right: 3%;
+}
+.border-radius-standard{
+    border-radius: 10px;
+}
+.readonlyAsNormal{
+    opacity: 1;
+    -webkit-text-fill-color: @font-main-color;
+}
+
+//定义水平垂直居中样式
+.moc-wrap { //middle or center wrap
+    position: relative;
+    .vm { //vertical middle
+        position: absolute;
+        top: 50%;
+        .transform(translateY(-50%));
+    }
+    .hc { //horizon center
+        position: absolute;
+        left: 50%;
+        .transform(translateX(-50%));
+    }
+    .mc { //垂直水平均居中
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        .transform(translate(-50%, -50%));
+    }
+}
+
+//定义将div显示/隐藏
+// 显示隐藏
+.vHidden {
+    visibility: hidden;
+}
+
+//隐藏但占据位置
+.vShow {
+    visibility: visible;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.show {
+    display: block;
+}
+
+//垂直flex布局(整体)
+//适用于整体框架flex布局，在局部flexV布局时谨慎使用
+.flexV {
+    .flex-v();
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}

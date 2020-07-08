@@ -1,0 +1,217 @@
+/* 一些全局的注释
+ * 设计图宽度为750px;
+ */
+
+// @maxWidth: 640PX;
+// @minWidth: 320PX;
+// @rootFontSize: (100/750)*100vw;
+/* 使用大写的PX是为了px2rem插件忽略这行样式，不改写为rem单位。
+ * 基于css大小写不敏感，px2rem大小写敏感
+ */
+html{
+    height: 100%;
+    // font-size: 50PX;
+    // font-size: @rootFontSize;
+    -webkit-text-size-adjust: none; 
+    /* 解决字号被chrome放大的问题
+     * 参考：https://segmentfault.com/a/1190000007177666#articleHeader6
+     *       https://github.com/jin5354/404forest/issues/33
+     * 或搜索关键字“font boosting”“Text Autosizer”“Font Inflation”
+     */
+
+    // 最大字号，与app的最大宽度相匹配
+    //  @media screen and (min-width: @maxWidth) {
+    //     &{
+    //         font-size: 85PX;
+    //         // 85px = 最大宽度640px * (设计图下rem大小100px/设计图宽度750px) 
+    //     }
+    // }
+    // 最小字号，与app的最小宽度相匹配
+    // @media screen and (max-width: @minWidth) {
+    //     &{
+    //         font-size: 42.5PX;
+    //     }
+    // }
+}
+body{
+    height: 100%;
+    background-color: @color-font;
+    -webkit-overflow-scrolling: touch;
+    font-size: @font-size;
+    // color: @color-font;
+}
+#app {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden; 
+    background-color: @bg-color-1;
+    position: relative;
+}
+.page{
+    height: 100%;
+    width:100%;
+    overflow:hidden;
+    background-color: #eeeeee;
+    @line-height: 80px;
+    .flex-v;
+    // >.header{
+    //     width: 100%;
+    //     min-height: @line-height;
+    //     position: relative;
+    //     box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+    //     z-index:2;
+    //     >.nav{
+    //         background-color: #fafafa;
+    //         height: @line-height;
+    //         line-height: @line-height;
+    //         position: relative;
+    //         border-bottom: 1PX solid @bd-color-1;
+    //         // z-index: 1;
+    //         width: 100%;
+    //         // box-shadow:0 0 5px 0 rgba(0,0,0,0.2);
+    //         >.center{
+    //             text-align: center;font-size: @font-size-xl;
+    //         }
+    //         >.left,>.right{
+    //             position: absolute;
+    //             min-width: 25%;
+    //             max-width:40%;
+    //             height:100%;
+    //             white-space: nowrap;
+    //             white-space:nowrap;
+    //             .iconfont,&.iconfont{
+    //                 font-size: @line-height * 0.5;
+    //             }
+    //             &:active,&.touch{
+    //                 .touch-default();
+    //                 color:@font-main-color;
+    //             }
+    //         }
+    //         >.left{
+    //             padding-left: 5%;
+    //             left:0;
+    //             top:0;
+    //         }
+    //         >.right{
+    //             padding-right: 5%;
+    //             right:0;
+    //             top:0;
+    //             text-align:right;
+    //         }
+    //         >.rich{
+    //             .flex-h;.flex-vc;
+    //             &.right{
+    //                 justify-content:flex-end;
+    //             }
+    //         }
+    //     }
+    // }
+    >.body{
+        .flex-110;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling : touch;
+        z-index:1;
+        .panel{
+            display: block;background-color: #ffffff;overflow: hidden;
+            & + .panel{
+                margin-top: @height-row_gap;
+            }
+        }
+    }
+    >.footer,>footer{
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+        z-index:2;
+        background-color: #ffffff;
+        // border-top: 1px solid @bd-color-1;
+    }
+}
+
+/**********自定义栅格化布局样式，因为是在移动端使用，因此不定义sm、md、lg尺寸*********/
+/****总共****/
+.row-container {
+    width: 100%;
+    [class*='col-'] {
+        float: left;
+        min-height:1px;
+    }
+    .row:before,
+    .row:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .row {
+        .col-offset-1 {
+            margin-left: 8.3333%;
+        }
+        .col-offset-2 {
+            margin-left: 16.666%;
+        }
+        .col-offset-3 {
+            margin-left: 25%;
+        }
+        .col-offset-4 {
+            margin-left: 33.333%;
+        }
+        .col-offset-5 {
+            margin-left: 41.666%;
+        }
+        .col-offset-6 {
+            margin-left: 50%;
+        }
+        .col-offset-7 {
+            margin-left: 58.333%;
+        }
+        .col-offset-8 {
+            margin-left: 66.6666%;
+        }
+        .col-offset-9 {
+            margin-left: 75%;
+        }
+        .col-offset-10 {
+            margin-left: 83.333%;
+        }
+        .col-offset-11 {
+            margin-left: 91.666%;
+        }
+    }
+    .row .col-1 {
+        width: 8.3333%;
+    }
+    .row .col-2 {
+        width: 16.666%;
+    }
+    .row .col-3 {
+        width: 25%;
+    }
+    .row .col-4 {
+        width: 33.333%;
+    }
+    .row .col-5 {
+        width: 41.666%;
+    }
+    .row .col-6 {
+        width: 50%;
+    }
+    .row .col-7 {
+        width: 58.333%;
+    }
+    .row .col-8 {
+        width: 66.6666%;
+    }
+    .row .col-9 {
+        width: 75%;
+    }
+    .row .col-10 {
+        width: 83.333%;
+    }
+    .row .col-11 {
+        width: 91.666%;
+    }
+    .row .col-12 {
+        width: 100%;
+    }
+}
+

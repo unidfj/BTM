@@ -1,0 +1,140 @@
+/* 这里是全局样式在APP.VUE里面引用 */
+/* 使用了px2rem插件，按设计稿宽度750px，样式表中直接以px为单位 */
+
+/* 基础样式 */
+@import './base/variant.less';       // 变量声明
+@import './base/mobileReset.less';   // 重置移动端浏览器样式
+@import './base/flex.less';          // 弹性布局兼容性方法
+@import './base/compat.less';        // 其它兼容性方法
+@import './base/function.less';      // 其它方法
+/* 组件样式 */
+@import './components/layout.less';  // 布局类
+// @import './components/button.less';  // 按钮
+// @import './components/list.less';    // 列表
+// @import './components/form.less';    // 表单
+// @import './components/modal.less';   // 模态框
+// @import './components/others.less';   // 模态框
+/****自定义全局样式*****/
+
+i {
+    font-style: normal;
+}
+html,p,button {
+    color: white;
+}
+
+.error-msg {
+	position: absolute;
+    bottom: 0;
+    color: red;
+    line-height: normal;
+    left: @margin-primary;
+    font-size: 24px;
+}
+.error-border {
+    border: 1px solid red;
+}
+.btn {
+    width: 200px;
+    height: 88px;
+    line-height: 88px;
+    background: #00A2EA;
+    border-radius: 100px;
+    font-size: 32px;
+    color: #fff;
+}
+.btn-default {
+    background-color: @btn-default;
+}
+.btn-green {
+    background: linear-gradient(90deg,rgba(108,234,114,1) 0%,rgba(26,184,0,1) 100%);
+    background: -webkit-linear-gradient(90deg,rgba(108,234,114,1) 0%,rgba(26,184,0,1) 100%);
+}
+.btn-blue {
+    background: #2cb4ff;
+    background: #2cb4ff;
+}
+.btn-red {
+    background:linear-gradient(90deg,rgba(255,96,96,1) 0%,rgba(254,45,45,1) 100%)!important;
+    background:-webkit-linear-linear-gradient(90deg,rgba(255,96,96,1) 0%,rgba(254,45,45,1) 100%)!important;
+}
+.btn-origin {
+    background:-webkit-linear-gradient(90deg,rgba(245,190,40,1) 0%,rgba(255,132,42,1) 100%);
+    background:linear-gradient(90deg,rgba(245,190,40,1) 0%,rgba(255,132,42,1) 100%);
+}
+.btn-detail {
+    width: 140px;
+    margin-bottom: @margin-primary;
+}
+.btn-small {
+    width: 140px;
+}
+.tj-form {
+    margin: @margin-primary;
+    .form-item {
+        font-size: 16PX;
+        position: relative;
+        label {
+            color:#DBD9EC;
+            display: inline-block;
+            &.mar {
+                margin-bottom: 20px;
+            }
+        }
+        input {
+            margin:20px 0 50px;
+            background-color: @easy-black;
+            font-size: 14PX;
+            color: white;
+            padding: 0 30px;
+            &.file {
+                position: absolute;
+                width: 352px;
+                height: 210px;
+                margin: 0;
+                left: 0;
+                top: 60px;
+                opacity: 0;
+            }
+        }
+        .img {
+            width: 352px;
+            height: 210px;
+            display: block;
+        }
+        .img-code {
+            height: 68px;
+            border-radius: 8px;
+            margin:20px 0 50px;
+            margin-left: 10px;
+        }
+        .item-flex {
+            .display-flex();
+            align-items: center;
+            button {
+                margin: 20px 0 50px 30px;
+                flex: 0 0 228px;
+                height: 80px;
+                font-size: 14PX;
+            }
+        }
+        .error {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            bottom: 0;
+            left: 0;
+          }
+    }
+    .mar {
+        margin-bottom: 50px;
+    }
+    .btn-submit {
+        width: 100%;
+        height: 44PX;
+    }
+}
+.no-msg {
+    text-align: center;
+    margin-top:30px;
+}

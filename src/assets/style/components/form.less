@@ -1,0 +1,107 @@
+/*自定义 check-box radio 样式
+使用
+<label class="radioBOX">
+  <input type="radio" class=" inputChoose circle|square">
+  文字
+</label>
+
+*/
+.radioBox {
+    margin: 0;
+    line-height: 36px;
+    display: inline-block;
+}
+
+.inputChoose {
+    width: 36px;
+    height: 36px;
+    border: 1px solid @bg-color;
+    margin: 0 14px;
+    float:left;
+    &.circle {
+        border-radius: 50%;
+    }
+    &.square {
+        border-radius: 6px;
+    }
+    //这个是不同样式的复选框
+    &.specialDraw {
+        border: 1px solid @bd-color-2;
+        &:checked {
+            background-color: @bg-color-white;
+            &:disabled{
+                background-color: @bg-color;
+                border:1px solid @bg-color;
+            }
+        }
+        &:checked:after {
+            content: " ";
+            display: block;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            width: 16px;
+            height: 8px;
+            margin-left: 6px;
+            margin-top: 8px;
+            border-left: 1px solid @bd-color-2;
+            border-bottom: 1px solid @bd-color-2;
+        }
+        &.loansColor {
+            border: 1px solid @theme-loans-color;
+            &:checked:after {
+                border-left: 1px solid @theme-loans-color;
+                border-bottom: 1px solid @theme-loans-color;
+            }
+        }
+    }
+    &.draw { //box里面是对勾
+        &:checked {
+            background-color: @theme-color;
+            border: 1px solid @theme-color;
+            &:disabled{
+                background-color: @bg-color;
+                border:1px solid @bg-color;
+            }
+        }
+        &:checked:after {
+            content: " ";
+            display: block;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            width: 18px;
+            height: 10px;
+            margin-left: 6px;
+            margin-top: 6px;
+            border-left: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+    }
+    &.dot { //box里面是点
+        &:checked {
+            background-color: @theme-color;
+            position: relative;
+        }
+        &:checked:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+    }
+}
