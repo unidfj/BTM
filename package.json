@@ -12,7 +12,7 @@
   "dependencies": {
     "ansi-html": "^0.0.7",
     "ansi-regex": "^3.0.0",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "babel-loader": "^7.1.1",
     "babel-runtime": "^6.23.0",
     "clipboard": "^2.0.4",
